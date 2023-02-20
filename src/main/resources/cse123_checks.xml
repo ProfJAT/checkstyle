@@ -1,13 +1,13 @@
 <module name="Checker">
-    <module name="LineLength">
-        <property name="fileExtensions" value="java"/>
-    </module>
+  <module name="LineLength">
+    <property name="fileExtensions" value="java"/>
+  </module>
 
-    <module name="TreeWalker">
+  <module name="TreeWalker">
 
-        <!-- 2.2: Import Statements -->
-        <!-- 2.2.1: Imports must be wildcards -->
-        <module name="com.puppycrawl.checks.imports.StarImportCheck"/>
+    <!-- 2.2: Import Statements -->
+    <!-- 2.2.1: Imports must be wildcards -->
+    <module name="com.puppycrawl.checks.imports.StarImportCheck"/>
 
-    </module>
+  </module>
 </module>
