@@ -156,7 +156,7 @@ public class LineLengthCheck extends AbstractFileSetCheck {
     public static final String MSG_KEY = "maxLineLen";
 
     /** Default maximum number of columns in a line. */
-    private static final int DEFAULT_MAX_COLUMNS = 80;
+    private static final int DEFAULT_MAX_COLUMNS = 100;
 
     /** Specify the maximum line length allowed. */
     private int max = DEFAULT_MAX_COLUMNS;
