@@ -27,10 +27,23 @@
     </module>
     <module name="ParenPad"/>
     <module name="MethodParamPad"/>
+    <module name="ArrayTypeStyle"/>
+    <module name="ArrayTrailingComma"/>
+    <module name="NoWhitespaceBefore"/>
+    <module name="EmptyLineSeparator">
+      <property name="tokens" value="METHOD_DEF"/>
+    </module>
 
     <!-- 3.3 One Statement Per Line -->
     <!-- 3.3.1 -->
     <module name="OneStatementPerLine"/>
 
+    <!-- 4.6 Casing -->
+    <module name="LocalVariableName"/>
+    <module name="MemberName"/>
+    <module name="MethodName"/>
+    <module name="TypeName"/>
+    <module name="ClassConstantNameCheck"/>
+    
   </module>
 </module>
