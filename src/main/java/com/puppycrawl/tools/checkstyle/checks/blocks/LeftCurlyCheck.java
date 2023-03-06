@@ -542,6 +542,8 @@ public class LeftCurlyCheck
             if (!ignoreEnums
                     && leftCurly.getParent().getParent().getType() == TokenTypes.ENUM_DEF) {
                 nextToken = leftCurly.getNextSibling();
+            } else if (leftCurly.getParent().getParent().getType() == TokenTypes.CLASS_DEF) {
+                nextToken = leftCurly.getNextSibling();
             }
         }
         return nextToken == null
