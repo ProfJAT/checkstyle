@@ -1,4 +1,4 @@
-package com.puppycrawl.tools.checkstyle.checks.imports;
+package com.cse123.checks.imports;
 
 import com.puppycrawl.tools.checkstyle.StatelessCheck;
 import com.puppycrawl.tools.checkstyle.api.AbstractCheck;

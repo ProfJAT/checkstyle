@@ -727,10 +727,27 @@ public class WhitespaceAroundCheck extends AbstractCheck {
                 isEmptyBlock(ast, parentType)
                     || allowEmptyTypes && isEmptyType(ast);
 
+        // There should be an exception for "{}",
+        // in other words, when left curly is followed immediately by a right curly
+        // or if right curly is preceded immediately by a left curly
+        String thisLine = getLine(ast.getLineNo() - 1);
+        boolean isFollowedByRightCurly = false;
+        boolean isPrecededByLeftCurly = false;
+        // NOTE: Very strange behavior here from TokenTypes: left curly is being identified as "7", rather than 72 
+        // as the enum TokenTypes.LCURLY suggests
+        if (currentType == 7 && thisLine.length() != ast.getColumnNo() + 1) {
+            isFollowedByRightCurly = thisLine.charAt(ast.getColumnNo() + 1) == '}';
+        }
+        if (currentType == TokenTypes.RCURLY && ast.getColumnNo() != 0) {
+            isPrecededByLeftCurly = thisLine.charAt(ast.getColumnNo() - 1) == '{';
+        }
+        final boolean isBraceException = isFollowedByRightCurly || isPrecededByLeftCurly;
+
         return starImportOrSlistInsideCaseGroup
                 || colonOfCaseOrDefaultOrForEach
                 || emptyBlockOrType
-                || isArrayInitialization(currentType, parentType);
+                || isArrayInitialization(currentType, parentType)
+                || isBraceException;
     }
 
     /**

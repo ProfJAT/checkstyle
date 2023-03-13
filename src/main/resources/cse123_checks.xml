@@ -43,7 +43,7 @@
     <module name="MemberName"/>
     <module name="MethodName"/>
     <module name="TypeName"/>
-    <module name="ClassConstantNameCheck"/>
+    <module name="ClassConstantName"/>
     
   </module>
 </module>

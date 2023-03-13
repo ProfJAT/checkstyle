@@ -5,7 +5,13 @@
   "https://checkstyle.org/dtds/packages_1_0.dtd">
  
 <checkstyle-packages>
-  <package name="com.cse123.checks"/>
+  <package name="com.cse123">
+    <package name="checks">
+      <package name="imports"/>
+      <package name="naming"/>
+      <package name="specs"/>
+    </package>
+  </package>
   <package name="com.puppycrawl.tools.checkstyle">
     <package name="checks">
       <package name="blocks"/>
